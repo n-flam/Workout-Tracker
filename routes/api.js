@@ -1,4 +1,4 @@
-//  5 routes: 1 post, x1 put, x2 get, 1 delete
+//  5 routes: x1 post, x1 put, x2 get, 1 delete
 
 // const router expres
 const router = require('express').Router();
@@ -59,6 +59,17 @@ router.put('/api/workouts/:id', ({ body, params }, res) => {
         res.json(err);
       });
   });
+
+//   1 post
+router.post('/api/workouts', (req, res) => {
+  Workout.create({})
+  .then((workoutDB) => {
+    res.json(workoutDB);
+  })
+  .catch((err) => {
+    res.json(err);
+  });
+});
 
 
 // requier model workout
