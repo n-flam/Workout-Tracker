@@ -1,4 +1,4 @@
-//  5 routes: 1 post, 1 put, 2 get, 1 delete
+//  5 routes: 1 post, x1 put, x2 get, 1 delete
 
 // const router expres
 const router = require('express').Router();
@@ -45,6 +45,20 @@ router.get('/api/workouts/range', (req, res) => {
       });
   });
 
-  
+// 1 put 
+router.put('/api/workouts/:id', ({ body, params }, res) => {
+    Workout.findByIdAndUpdate(
+      params.id,
+      { $push: { exercises: body } },
+      { new: true, runValidators: true }
+    )
+      .then((workoutDB) => {
+        res.json(workoutDB);
+      })
+      .catch((err) => {
+        res.json(err);
+      });
+  });
+
 
 // requier model workout
