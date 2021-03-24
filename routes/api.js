@@ -1,8 +1,7 @@
 //  5 routes: x1 post, x1 put, x2 get, 1 delete
-
 // const router expres
-const router = require('express').Router();
 // requier model workout
+const router = require('express').Router();
 const Workout = require('../models/workout.js');
 
 // 1 get route
