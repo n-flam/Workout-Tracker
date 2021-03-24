@@ -83,5 +83,4 @@ router.delete('/api/workouts', ({ body }, res) => {
       });
   });
   
-
-
+module.exports = router;
