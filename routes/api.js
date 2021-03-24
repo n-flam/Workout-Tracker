@@ -4,7 +4,7 @@
 const router = require('express').Router();
 const Workout = require('../models/workout.js');
 
-// 1 get get route
+// 1 get route
 router.get('/api/workouts', (req, res) => {
   Workout.aggregate([
     {
@@ -22,5 +22,29 @@ router.get('/api/workouts', (req, res) => {
       res.json(err);
     });
 });
+
+// 2nd get route
+router.get('/api/workouts/range', (req, res) => {
+    Workout.aggregate([
+      {
+        $addFields: {
+          totalDuration: {
+            $sum: '$exercises.duration',
+          },
+        },
+      },
+    ])
+      .sort({ _id: -1 })
+      .limit(7)
+      .then((workoutDBs) => {
+        console.log(workoutDBs);
+        res.json(workoutDBs);
+      })
+      .catch((err) => {
+        res.json(err);
+      });
+  });
+
+  
 
 // requier model workout
