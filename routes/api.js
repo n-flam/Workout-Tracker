@@ -2,6 +2,7 @@
 
 // const router expres
 const router = require('express').Router();
+// requier model workout
 const Workout = require('../models/workout.js');
 
 // 1 get route
@@ -45,7 +46,7 @@ router.get('/api/workouts/range', (req, res) => {
       });
   });
 
-// 1 put 
+// 1 put route
 router.put('/api/workouts/:id', ({ body, params }, res) => {
     Workout.findByIdAndUpdate(
       params.id,
@@ -60,7 +61,7 @@ router.put('/api/workouts/:id', ({ body, params }, res) => {
       });
   });
 
-//   1 post
+//   1 post route
 router.post('/api/workouts', (req, res) => {
   Workout.create({})
   .then((workoutDB) => {
@@ -71,5 +72,16 @@ router.post('/api/workouts', (req, res) => {
   });
 });
 
+// 1 delet route
+router.delete('/api/workouts', ({ body }, res) => {
+    Workout.findByIdAndDelete(body.id)
+      .then(() => {
+        res.json(true);
+      })
+      .catch((err) => {
+        res.json(err);
+      });
+  });
+  
 
-// requier model workout
+
