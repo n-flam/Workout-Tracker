@@ -20,6 +20,16 @@ db.once("open", function() {
     console.log("yes we are connected");
 });
 
+mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost/workout-tracker-nflam',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    }
+  );
+
 // routes
 app.use(require("./routes/api-routes"));
 app.use(require("./routes/html-routes"));
