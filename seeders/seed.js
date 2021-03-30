@@ -2,12 +2,7 @@ let mongoose = require("mongoose");
 let db = require("../models");
 require("dotenv").config();
 
-mongoose.connect(process.env.MONGODB_DSN, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-});
+mongoose.connect(process.env.MONGODB_DSN, {useNewUrlParser: true, useFindAndModify: false});
 
 let workoutSeed = [
   {

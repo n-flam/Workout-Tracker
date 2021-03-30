@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 
 const app = express();
-// const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(logger("dev"));
 
@@ -12,15 +12,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(
-  process.env.MONGODB_DSN || 'mongodb://localhost/workout-tracker-nflam',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  }
-  );
+mongoose.connect(process.env.MONGODB_DSN, {useNewUrlParser: true, useFindAndModify: false});
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
