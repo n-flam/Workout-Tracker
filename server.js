@@ -27,5 +27,5 @@ app.use(require("./routes/api-routes"));
 app.use(require("./routes/html-routes"));
 
 app.listen(PORT, () => {
-  console.log("App running on port 3000`App running on port ${PORT}! Visit http://localhost:${PORT}/ in your browser");
+  console.log(`App running on port ${PORT}! Visit http://localhost:${PORT}/ in your browser`);
 });
