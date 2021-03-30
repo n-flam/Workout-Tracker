@@ -19,7 +19,10 @@ router.get("/api/workouts", (req, res) => {
       res.json(workoutDBs);
     })
     .catch((err) => {
-      res.json(err);
+      console.error(err);
+      res.status(400).json({
+        err: String(err),
+      });
     });
 });
 
