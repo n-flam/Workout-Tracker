@@ -26,6 +26,6 @@ db.once("open", function () {
 app.use(require("./routes/api-routes"));
 app.use(require("./routes/html-routes"));
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("App running on port 3000`App running on port ${PORT}! Visit http://localhost:${PORT}/ in your browser");
 });
