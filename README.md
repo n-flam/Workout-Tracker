@@ -34,12 +34,14 @@ The user should be able to:
   * View the total duration of each workout from the past seven workouts on the `stats` page.
 
 # github
-https://github.com/n-flam/HomemadeBurger
+https://github.com/n-flam/Workout-Tracker
 
+# githubpages
+https://n-flam.github.io/Workout-Tracker
 
 # liveHerocuDemo
-https://homemadeburger.herokuapp.com/
+https://workout-tracker-nflam.herokuapp.com
 
 
 # Mockup
-![Alt text](https://github.com/n-flam/HomemadeBurger/blob/main/assets/screenshot.jpg)
+![Alt text](https://github.com/n-flam/Workout-Tracker/blob/main/mockup/mockup.png)
