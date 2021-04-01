@@ -17,6 +17,7 @@
     "epress": "0.0.1-security",
     "express": "^4.17.1",
     "mongoose": "^5.12.1",
+    "mongoose-data-seed": "^2.1.6",
     "morgan": "^1.10.0"
   }
 }
